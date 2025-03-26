@@ -26,7 +26,7 @@ const Body = () => {
     );
     // console.log("Data = "+data);
     const json = await data.json();
-    // console.log("JSON = "+ json); hello mohitv ff
+    // console.log("JSON = "+ json); hello mohitv ff rishi
 
     // console.log(json.data.cards[4]);
 
