@@ -13,7 +13,8 @@ const Body = () => {
   const [searchText,setSearchText] = useState("");
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-  // console.log("Body::",listOfRestaurants);
+  console.log("Body::",listOfRestaurants);
+  
 
   useEffect(() => {
     // console.log("USEEEE EFEctt");
@@ -26,7 +27,7 @@ const Body = () => {
     );
     // console.log("Data = "+data);
     const json = await data.json();
-    // console.log("JSON = "+ json); hello mohitv ff rishi
+    // console.log("JSON = "+ json);
 
     // console.log(json.data.cards[4]);
 
@@ -40,27 +41,29 @@ const Body = () => {
     <h1>
       Looks like you're offline!! Please check your internet connection;
     </h1>
+      
   )
 
-  if(listOfRestaurants.length===0){
+  if(!listOfRestaurants?.length===0){
     return <Shimmer/>
   }
 
   const {loggedInUser,setUserName} = useContext(UserContext);
 
-  return listOfRestaurants.length === 0? <Shimmer/>:(
+  return !listOfRestaurants?.length?<Shimmer/>:(
         <div className="body">
-            <div className="filter flex">
+            <div className="filter flex justify-center">
               <div className="search m-4 p-4">
                 <input
                  type="text"
-                 className="search-box border-solid border-black" 
+                 className="search-box border border-yellow-500 rounded-sm" 
                  value={searchText} 
                  onChange={(e) => {
                   setSearchText(e.target.value);
+                  // console.log("CCCC")
                  }}
                  />
-                <button className="px-4  bg-green-100 m-4 rounded-lg"
+                <button className="px-4  bg-green-100 m-4 rounded-lg "
                   onClick = {()=> {
                   // Filter the restraunt cards and update the UI
                   //searchText
@@ -94,7 +97,7 @@ const Body = () => {
               </div>
               
             </div>
-            <div className="res-container flex flex-wrap">
+            <div className="res-container flex flex-wrap justify-center">
               {
                 filteredRestraunt.map((restaurant) => (
                 <Link 

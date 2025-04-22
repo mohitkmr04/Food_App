@@ -14,16 +14,16 @@ const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(null);
 
 
-    if(resInfo === null) return <Shimmer/>;
+    if(!resInfo) return <Shimmer/>;
 
-    //console.log("Cards data:", resInfo?.cards);
+    console.log("Cards data:", resInfo);
     const { name, cuisines, costForTwoMessage} = resInfo.cards?.[2]?.card?.card?.info;
-    // console.log("Name = ",name)
+    console.log("Name = ",name)
 
     const itemCard = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
     // console.log("ItemCard = ",resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards)
 
-    const categories = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=> c.card?.["card"]?.["@type"]===
+    const categories = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c=> c.card?.card?.["@type"]===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
     // console.log(categories);

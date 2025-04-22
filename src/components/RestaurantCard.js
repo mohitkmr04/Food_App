@@ -2,8 +2,9 @@ import {CDN_URL} from "../utils/constants.js";
 
 const RestaurantCard = ({resData}) => {
 
-    const {cloudinaryImageId,name,avgRating,cuisines,costForTwo,deliveryTime} = resData.info;
-    console.log(name);
+    const {cloudinaryImageId,name,avgRating,cuisines,costForTwo,  sla } = resData.info;
+    console.log(resData.info);
+    const { deliveryTime } = sla || {}; 
 
     return (
         <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-400" >
@@ -16,7 +17,7 @@ const RestaurantCard = ({resData}) => {
             <h4 className=" overflow-wrap: break-words ">{cuisines.join(", ")}</h4>
             <h4>Rating - {avgRating}🌟</h4>
             <h4>{costForTwo}</h4>
-            <h4>{deliveryTime}</h4>
+            <h4>Delivery Time = {deliveryTime} mins</h4>
         </div>
     );
 };

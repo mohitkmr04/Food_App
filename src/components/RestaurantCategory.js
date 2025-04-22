@@ -14,7 +14,7 @@ const RestaurantCategory = ({data, showItems, setShowIndex}) => {
                 <div className="flex flex-row  justify-between w-full cursor-pointer" 
                     onClick={handleClick}
                 >
-                    <p className="font-bold text-lg">{data.title} ({data.itemCards.length})</p>
+                    <p className="Res-cat font-bold text-lg">{data.title} ({data.itemCards.length})</p>
                     <p>🔽</p>
                 </div>
                 {showItems && <ItemList items={data.itemCards}/>}
