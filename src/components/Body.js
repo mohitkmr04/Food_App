@@ -13,7 +13,7 @@ const Body = () => {
   const [searchText,setSearchText] = useState("");
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-  console.log("Body::",listOfRestaurants);
+  console.log("Body components",listOfRestaurants);
   
 
   useEffect(() => {
