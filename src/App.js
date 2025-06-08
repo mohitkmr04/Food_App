@@ -11,6 +11,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import {Provider} from "react-redux";
 import appStore from "./utils/appStore.js";
 import Cart from "./components/Cart.js";
+import Footer from "./components/Footer.js";
 
 
 // Chunking
@@ -40,6 +41,7 @@ const AppLayout = () => {
                 <div className="app">
                     <Header/>
                     <Outlet/>
+                    <Footer/>
                 </div>
             </UserContext.Provider>
         </Provider>
