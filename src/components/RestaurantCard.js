@@ -7,9 +7,9 @@ const RestaurantCard = ({resData}) => {
     const { deliveryTime } = sla || {}; 
 
     return (
-        <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-400" >
+        <div className="res-card m-4 p-4 w-[250px] h-[500px] rounded-lg bg-gray-100 hover:bg-gray-400" >
             <img 
-            className="res-logo rounded-lg"
+            className="res-logo rounded-lg h-[250px]"
             alt="res-logo" 
             src={CDN_URL+cloudinaryImageId}
             />
